@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-print("--- STEP 1: Creating the Raw Netflix Data Matrix ---")
+print("-- STEP 1: Creating the Raw Netflix Data Matrix --")
 # 0 represents unwatched movies
 raw_matrix = np.array([
     [5, 4, 0, 1],  # User A
