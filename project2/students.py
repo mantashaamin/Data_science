@@ -15,6 +15,66 @@ df = pd.read_csv(csv_path)
 print(df)
 print(df.head(3))
 print(df.tail(3))
-df[df["math"] > 80]["name"]
-(df["math"] > 80) & (df["physics"] > 80)
-df[(df["math"] > 80) & (df["chemistry"] > 90)]["name"]
+
+# filtering
+math_above_80 = df[df["math"] > 80]["name"]
+
+# multiple conditions
+math_and_physics_above_80 = df[(df["math"] > 80) & (df["physics"] > 80)]
+
+math_above_80_chem_above_90 = df[
+    (df["math"] > 80) & (df["chemistry"] > 90)
+]["name"]
+
+# aggregation
+lowest_chemistry_student = df[
+    df["chemistry"] == df["chemistry"].min()
+]["name"]
+
+# count filtered rows
+chemistry_below_80_count = df[df["chemistry"] < 80].shape[0]
+
+# create total column
+df["total"] = df["math"] + df["physics"] + df["chemistry"]
+
+# total marks series
+total_marks = df["total"]
+
+# highest total
+highest_total = df["total"].max()
+
+# topper row
+topper_row = df[df["total"] == highest_total]
+
+# topper name
+topper_name = topper_row["name"]
+
+# topper using idxmax
+topper_using_idxmax = df.loc[df["total"].idxmax()]
+
+# sorted by total (highest first)
+sorted_by_total = df.sort_values("total", ascending=False)
+
+# name frequencies
+name_counts = df["name"].value_counts()
+
+# unique names
+unique_name_count = df["name"].nunique()
+
+# dataset summary
+summary_stats = df.describe()
+
+print("Topper:")
+print(topper_name)
+
+print("\nHighest Total:")
+print(highest_total)
+
+print("\nName Counts:")
+print(name_counts)
+
+print("\nUnique Names:")
+print(unique_name_count)
+
+print("\nSummary Statistics:")
+print(summary_stats)
