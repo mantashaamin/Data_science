@@ -64,6 +64,12 @@ unique_name_count = df["name"].nunique()
 # dataset summary
 summary_stats = df.describe()
 
+#groupby() = split data into groups, then perform an operation on each group.
+group = df.groupby("class")["total"].mean() # gives avg
+group_max=df.groupby("class")["total"].max()# max
+group_min=df.groupby("class")["total"].min()#lowest 
+group_count=df.groupby("class")["name"].count()#count number of student 
+
 print("Topper:")
 print(topper_name)
 
@@ -78,3 +84,15 @@ print(unique_name_count)
 
 print("\nSummary Statistics:")
 print(summary_stats)
+
+print("\navg total per class:")
+print(group)
+
+print("\n highest score: ")
+print(group_max)
+
+print("\n lowest score")
+print(group_min)
+
+print("\n count number of student")
+print(group_count)
