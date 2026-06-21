@@ -1,6 +1,5 @@
 import pandas as pd
 import os
-
 print("Current directory:", os.getcwd())
 print("Script file:", __file__)
 
@@ -96,3 +95,10 @@ print(group_min)
 
 print("\n count number of student")
 print(group_count)
+print("------------------------------------------")
+x = df.groupby("class").agg({
+    "math": ["mean", "max"],
+    "physics": ["mean", "min"],
+    "chemistry": ["mean", "max"]
+})
+print(x)
