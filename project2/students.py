@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import matplotlib.pyplot as plt
 print("Current directory:", os.getcwd())
 print("Script file:", __file__)
 
@@ -95,10 +96,22 @@ print(group_min)
 
 print("\n count number of student")
 print(group_count)
-print("------------------------------------------")
+print("-----------------------------------------------------------")
 x = df.groupby("class").agg({
     "math": ["mean", "max"],
     "physics": ["mean", "min"],
     "chemistry": ["mean", "max"]
 })
 print(x)
+print("--------------------------------------------------------------")
+def get_grade(total):
+    if total >= 270:
+        return "A"
+    elif total >= 240:
+        return "B"
+    else:
+        return "C"
+
+df["grade"] = df["total"].apply(get_grade)
+
+print(df)
