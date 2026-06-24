@@ -1,6 +1,7 @@
 import pandas as pd
 import os
-import matplotlib.pyplot as plt
+
+
 print("Current directory:", os.getcwd())
 print("Script file:", __file__)
 
@@ -115,3 +116,13 @@ def get_grade(total):
 df["grade"] = df["total"].apply(get_grade)
 
 print(df)
+print("--------------------------------------------------------------")
+import matplotlib.pyplot as plt
+grade_counts = df["grade"].value_counts()
+
+plt.bar(
+    grade_counts.index,
+    grade_counts.values
+)
+
+plt.show()
