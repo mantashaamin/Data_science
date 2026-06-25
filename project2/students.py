@@ -114,7 +114,6 @@ def get_grade(total):
         return "C"
 
 df["grade"] = df["total"].apply(get_grade)
-
 print(df)
 print("--------------------------------------------------------------")
 import matplotlib.pyplot as plt
@@ -124,5 +123,82 @@ plt.bar(
     grade_counts.index,
     grade_counts.values
 )
+
+plt.show()
+
+plt.figure(figsize=(8,5))
+
+plt.hist(df["total"])
+
+plt.title("Distribution of Total Marks")
+
+plt.xlabel("Total Marks")
+
+plt.ylabel("Number of Students")
+
+plt.grid()
+
+plt.hist(df["total"], bins=5)
+
+plt.show()
+
+plt.scatter(
+    df["math"],
+    df["physics"]
+)
+plt.show()
+
+
+
+plt.figure(figsize=(8,5))
+
+plt.plot(
+    df["name"],
+    df["math"],
+    label="Math"
+)
+
+plt.plot(
+    df["name"],
+    df["physics"],
+    label="Physics"
+)
+
+plt.title("Math vs Physics Marks")
+
+plt.xlabel("Students")
+plt.ylabel("Marks")
+
+plt.grid()
+
+plt.legend()
+
+plt.show()
+
+plt.figure(figsize=(10,8))
+
+plt.subplot(2,1,1)
+
+plt.bar(
+    df["name"],
+    df["math"]
+)
+
+plt.title("Math Marks")
+
+plt.subplot(2,1,2)
+
+plt.plot(
+    df["name"],
+    df["math"],
+    marker="o",
+    linewidth=4,
+    linestyle="--",
+    label="Math"
+)
+
+plt.title("Physics Marks")
+plt.savefig("math_marks.png")
+plt.tight_layout()
 
 plt.show()
