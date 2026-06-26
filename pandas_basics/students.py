@@ -117,4 +117,3 @@ def get_grade(total):
 df["grade"] = df["total"].apply(get_grade)
 print(df)
 print("--------------------------------------------------------------")
-
