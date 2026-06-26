@@ -40,12 +40,12 @@ Rather than only collecting code, this repository focuses on understanding conce
 ```
 Data_science/
 │
-├── project1/
+├── pandas_basics/
 │   ├── students.csv
 │   ├── students.py
 │   └── ...
 │
-├── project2/
+├── matplotlib_basics/
 │   ├── students.csv
 │   ├── plot.py
 │   └── ...
