@@ -23,10 +23,11 @@ sns.scatterplot(
     y="tip",
     hue="day"
 )
-
+plt.savefig("hue.png")
 plt.show()
 
-'''Smoker -> Different marker shape
+'''
+Smoker -> Different marker shape
 style="sex"
 style="day"
 style="smoker"
@@ -44,8 +45,9 @@ sns.scatterplot(
 )
 
 plt.title("Total Bill vs Tip")
-
+plt.savefig("smoker")
 plt.show()
+
 '''| total_bill |  tip | sex    | smoker | day  | time   | size |
 | ---------- | ---: | ------ | ------ | ---- | ------ | ---- |
 | 16.99      | 1.01 | Female | No     | Sun  | Dinner | 2    |
@@ -61,7 +63,7 @@ sns.scatterplot(
     hue="day",
     style="time"
 )
-
+plt.savefig("scatterplot.png")
 plt.show()
 '''| Parameter | Controls            | Example          |
 | --------- | ------------------- | ---------------- |
