@@ -72,3 +72,11 @@ plt.show()
 | `hue`     | Color               | `hue="sex"`      |
 | `style`   | Marker shape        | `style="day"`    |
 '''
+
+sns.boxplot(
+    data=tips,
+    x="day",
+    y="total_bill"
+)
+plt.savefig("boxplot.png")
+plt.show()
